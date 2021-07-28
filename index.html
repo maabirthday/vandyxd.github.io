@@ -1,0 +1,102 @@
+
+
+
+<html>
+<style>
+body{-webkit-user-select:none;-moz-user-select:-moz-none;
+-ms-user-select:none;user-select:none; background-color: rgb(28,28,28);}
+
+@font-face {
+  font-family: ZCOOL QingKe HuangYou;
+  src: url("../assets/fonts/CourierPrime-Regular.ttf");
+}
+
+*{
+    font-family: ZCOOL QingKe HuangYou;
+}
+
+h1{color: white;} p{color:white;}
+
+html { cursor: url("../cursor.png"), default;}
+
+.wrapper #container {
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+h1{
+    font-size: 100;
+    margin:0;
+}
+
+
+a:hover { cursor: url("https://cdn.discordapp.com/attachments/826700790319415326/869801705628385370/happy.png"), auto;}
+
+</style>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<title> Vandy</title>
+<link rel="shortcut icon" type="image/x-icon" href ="favicon.ico">
+
+<video autoplay muted loop id="bck-vid"><source src="https://cdn.discordapp.com/attachments/866386148058595349/866393664636321792/20m_bck.mp4" type="video/mp4"></video>
+<style>#bck-vid {position: fixed;right: 0;bottom: 0;min-width: 100%;min-height: 100%;}</style>
+
+</head>
+    <body>
+        <div class="wrapper" style="position:relative;">
+
+            <div id="container">
+                <div id="logo"> 
+                    <h1 class="title">vandy </h1>
+                    <p> </p>
+                    <p>yo  </p>
+                    <h3 style="color:white;">⠀ <a href="https://discord.com/invite/yMtnqV8npf"target="_blank" style="color: #5865F2;" class="clickable" >discord</a> ⠀ <a href="https://krunker.io/social.html?p=profile&q=Vandyster" class="clickable" target="_blank" style="color: #5865F2;" >krunker</a> ⠀ <a href="https://www.youtube.com/channel/UCO1Z6F7deidtaHeEmHrCHxw" target="_blank" style="color: #5865F2;" class="clickable" >youtube</a> ⠀</h3>
+                </div>
+                <h1 id="startbutton" onclick="startIntro()"> Click me! </h1>
+            </div>
+
+        </div>
+    </body>
+<script>
+    document.getElementById("bck-vid").pause()
+    document.getElementById("logo").style.display = "none";
+   
+
+
+function startIntro(){
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("bck-vid").play();
+    var audio = new Audio("https://cdn.discordapp.com/attachments/866386148058595349/866394301021159444/20m_audio.mp3")
+    audio.loop=true;
+    audio.play();
+    document.getElementById("logo").style.display = "block";
+}
+
+$("html").on("contextmenu", (event) => {
+  const img = document.createElement("img");
+
+  const trollfaceLight = "trollface-light";
+
+  img.src = "assets/trollface.png";
+  img.width = 64;
+  img.height = 64;
+  //img.alt = "obnoxious.club";
+  img.style = `position: absolute; left: ${event.pageX}px; top: ${event.pageY}px; z-index: 10`;
+  img.className = `troll ${trollfaceLight}`;
+
+  document.body.appendChild(img);
+  return false;
+});
+
+setInterval(() => {
+  $(".troll").remove();
+}, 600);
+document.getElementById("logo").style.display="none";
+</script>
+
+</html>
